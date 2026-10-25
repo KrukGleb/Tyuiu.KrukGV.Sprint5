@@ -18,7 +18,7 @@ namespace Tyuiu.KrukGV.Sprint5.Task5.V17.Test
 
             DataService ds = new DataService();
             var y = ds.LoadFromDataFile(path);
-            Assert.AreEqual(-14, y);
+            Assert.AreEqual(114.71, y);
         }
     }
 }

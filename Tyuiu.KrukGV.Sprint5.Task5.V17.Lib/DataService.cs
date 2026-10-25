@@ -7,16 +7,18 @@ namespace Tyuiu.KrukGV.Sprint5.Task5.V17.Lib
         public double LoadFromDataFile(string path)
         {
             string strX = File.ReadAllText(path);
+            strX = strX.Replace('.', ',');
             string[] parts = strX.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-
-            int sum = 0;
-            int temp;
+            
+            double sum = 0;
+            double number;
             foreach (string part in parts)
             {
-                if (int.TryParse(part, out temp))
-                    sum += temp;
-              }
-            return sum;
+                number = Convert.ToDouble(part);
+                if (number > 0)
+                    sum += number;
+            }
+            return Math.Round(sum, 2);
             
         }
     }

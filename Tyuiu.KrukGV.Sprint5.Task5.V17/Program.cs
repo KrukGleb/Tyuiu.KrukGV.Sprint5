@@ -25,8 +25,10 @@ namespace Tyuiu.KrukGV.Sprint5.Task5.V17
 
 
             string path = @"C:\DataSprint5\InPutDataFileTask5V17.txt";
+            string strX = File.ReadAllText(path);
+            strX = strX.Replace('.', ',');
 
-            Console.WriteLine("Данные находятся в файле: " + path);
+            Console.WriteLine("Данные: " + strX);
 
             Console.WriteLine("*************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
