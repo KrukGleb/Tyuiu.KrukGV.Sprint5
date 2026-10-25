@@ -18,28 +18,25 @@ namespace Tyuiu.KrukGV.Sprint5.Task7.V6
             Console.WriteLine("* Выполнил: Крук Глеб Владиславович | НТм25-1                             *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Написать программу из операций сравнений (==, !=, <, >, <=, >=,         *");
-            Console.WriteLine("* последовательность операций не должна нарушаться) и арифметических      *");
-            Console.WriteLine("* выражений, которая вернет логическую последовательность                 *");
+            Console.WriteLine("* Заменить все латинские буквы на # в строке:                             *");
+            Console.WriteLine("* Привет, World! This моя Первая программа.                               *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
 
-            var x = 1065;
-            var y = 755;
-            Console.WriteLine("x = " + x);
-            Console.WriteLine("y = " + y);
+            string path = @"C:\DataSprint5\InPutDataFileTask7V6.txt";
+            string strX = File.ReadAllText(path);
 
-            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("Текст: " + strX);
+
+            Console.WriteLine("*************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
-            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("*************************************************************************");
 
-            bool[] res = ds.GetCompareOperations(x, y);
-            foreach (var op in res) 
-            {
-                Console.WriteLine(op);
-            }
+            string res = ds.LoadDataAndSave(path);
+            Console.WriteLine(res);
+
             Console.ReadKey();
         }
     }
