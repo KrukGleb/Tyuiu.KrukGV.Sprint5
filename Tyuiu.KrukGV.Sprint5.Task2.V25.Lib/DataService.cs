@@ -17,13 +17,17 @@ namespace Tyuiu.KrukGV.Sprint5.Task2.V25.Lib
                 File.Delete(path);
 
             string info = "";
-            for (int i = 0; i < 3; i++)
+            int len = 3;
+            for (int i = 0; i < len; i++)
             {
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < len; j++)
                 {
                     if (matrix[i, j] % 2 != 0)
                         matrix[i, j] = 0;
-                    info += matrix[i, j].ToString() + ";";
+                    
+                    info += matrix[i, j].ToString();
+                    if (j < len - 1)
+                        info += ";";
                 }
                 info += "\n";
             }
