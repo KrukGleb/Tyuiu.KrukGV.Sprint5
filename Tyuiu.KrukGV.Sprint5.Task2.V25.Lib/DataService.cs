@@ -23,7 +23,7 @@ namespace Tyuiu.KrukGV.Sprint5.Task2.V25.Lib
                 {
                     if (matrix[i, j] % 2 != 0)
                         matrix[i, j] = 0;
-                    info += matrix[i, j].ToString() + "; ";
+                    info += matrix[i, j].ToString() + ";";
                 }
                 info += "\n";
             }
