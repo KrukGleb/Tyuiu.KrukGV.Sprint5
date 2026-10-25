@@ -18,28 +18,25 @@ namespace Tyuiu.KrukGV.Sprint5.Task6.V9
             Console.WriteLine("* Выполнил: Крук Глеб Владиславович | НТм25-1                             *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Написать программу из операций сравнений (==, !=, <, >, <=, >=,         *");
-            Console.WriteLine("* последовательность операций не должна нарушаться) и арифметических      *");
-            Console.WriteLine("* выражений, которая вернет логическую последовательность                 *");
+            Console.WriteLine("* Найти количество слов длиной три символа в строке:                      *");
+            Console.WriteLine("* Один, два, три – вперёд!                                                *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
 
-            var x = 1065;
-            var y = 755;
-            Console.WriteLine("x = " + x);
-            Console.WriteLine("y = " + y);
+            string path = @"C:\DataSprint5\InPutDataFileTask6V9.txt";
+            string strX = File.ReadAllText(path);
 
-            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("Текст: " + strX);
+
+            Console.WriteLine("*************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
-            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("*************************************************************************");
 
-            bool[] res = ds.GetCompareOperations(x, y);
-            foreach (var op in res) 
-            {
-                Console.WriteLine(op);
-            }
+            int res = ds.LoadFromDataFile(path);
+            Console.WriteLine(res);
+
             Console.ReadKey();
         }
     }
