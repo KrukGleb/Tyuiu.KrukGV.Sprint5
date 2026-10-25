@@ -18,28 +18,25 @@ namespace Tyuiu.KrukGV.Sprint5.Task3.V5
             Console.WriteLine("* Выполнил: Крук Глеб Владиславович | НТм25-1                             *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Написать программу из операций сравнений (==, !=, <, >, <=, >=,         *");
-            Console.WriteLine("* последовательность операций не должна нарушаться) и арифметических      *");
-            Console.WriteLine("* выражений, которая вернет логическую последовательность                 *");
+            Console.WriteLine("* Дано выражение , вычислить его значение при x = 2, результат сохранить  *");
+            Console.WriteLine("* в бинарный файл OutPutFileTask3.bin и вывести на консоль.               *");
+            Console.WriteLine("* Округлить до трёх знаков после запятой.                                 *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
 
-            var x = 1065;
-            var y = 755;
+            int x = 2;
             Console.WriteLine("x = " + x);
-            Console.WriteLine("y = " + y);
+            
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            bool[] res = ds.GetCompareOperations(x, y);
-            foreach (var op in res) 
-            {
-                Console.WriteLine(op);
-            }
+            string res = ds.SaveToFileTextData(x);
+
+            Console.WriteLine("Файл: " + res);
             Console.ReadKey();
         }
     }

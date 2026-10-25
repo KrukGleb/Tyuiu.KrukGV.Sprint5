@@ -7,13 +7,27 @@ namespace Tyuiu.KrukGV.Sprint5.Task3.V5.Test
     public class DataServiceTest
     {
         [TestMethod]
-        public void ValidExpression()
+        public void CheckedExistFile()
         {
             DataService ds = new DataService();
-            bool[] res = ds.GetCompareOperations(1065, 755);
-            bool[] ans = { true, false, false, false, false, false };
+            
+            ds.SaveToFileTextData(2);
 
-            CollectionAssert.AreEqual(ans, res);
+            string path = Path.GetTempPath();
+            path = Path.Combine(path, "OutPutFileTask3.bin");
+
+            FileInfo fileInfo = new FileInfo(path);
+            bool fileExists = fileInfo.Exists;
+            bool wait = true;
+            Assert.AreEqual(wait, fileExists);
+
+            using (BinaryReader reader = new BinaryReader(File.Open(path, FileMode.Open)))
+            {
+                byte[] bytes = reader.ReadBytes(8);
+                double y = BitConverter.ToDouble(bytes, 0);
+
+                Assert.AreEqual(13, y);
+            }
         }
     }
 }
