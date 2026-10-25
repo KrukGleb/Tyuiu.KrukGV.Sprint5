@@ -7,7 +7,7 @@ namespace Tyuiu.KrukGV.Sprint5.Task1.V12.Test
     public class DataServiceTest
     {
         [TestMethod]
-        public void ValidExpression()
+        public void CheckedExistFile()
         {
             DataService ds = new DataService();
             ds.SaveToFileTextData(-5, 5);

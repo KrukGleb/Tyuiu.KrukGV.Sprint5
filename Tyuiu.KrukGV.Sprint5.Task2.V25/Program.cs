@@ -26,20 +26,21 @@ namespace Tyuiu.KrukGV.Sprint5.Task2.V25
             Console.WriteLine("***************************************************************************");
 
 
-            var x = 1065;
-            var y = 755;
-            Console.WriteLine("x = " + x);
-            Console.WriteLine("y = " + y);
+            int[,] mtrx = { { 4, 8, 5 }, { 1, 4, 2 }, { 4, 9, 9 } };
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                    Console.Write(mtrx[i, j] + ",");
+                Console.WriteLine();
+            }
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            bool[] res = ds.GetCompareOperations(x, y);
-            foreach (var op in res) 
-            {
-                Console.WriteLine(op);
-            }
+            string res = ds.SaveToFileTextData(mtrx);
+
+            Console.WriteLine("Файл: " + res);
             Console.ReadKey();
         }
     }
