@@ -10,10 +10,15 @@ namespace Tyuiu.KrukGV.Sprint5.Task1.V12.Test
         public void ValidExpression()
         {
             DataService ds = new DataService();
-            bool[] res = ds.GetCompareOperations(1065, 755);
-            bool[] ans = { true, false, false, false, false, false };
+            ds.SaveToFileTextData(-5, 5);
 
-            CollectionAssert.AreEqual(ans, res);
+            string path = Path.GetTempPath();
+            path = Path.Combine(path, "OutPutFileTask1.txt");
+
+            FileInfo fileInfo = new FileInfo(path);
+            bool fileExists = fileInfo.Exists;
+            bool wait = true;
+            Assert.AreEqual(wait, fileExists);
         }
     }
 }
