@@ -26,20 +26,17 @@ namespace Tyuiu.KrukGV.Sprint5.Task4.V10
             Console.WriteLine("***************************************************************************");
 
 
-            var x = 1065;
-            var y = 755;
-            Console.WriteLine("x = " + x);
-            Console.WriteLine("y = " + y);
+            string path = @"C:\DataSprint5\InPutDataFileTask4V10.txt";
 
-            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("Данные находятся в файле: " + path);
+
+            Console.WriteLine("*************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
-            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("*************************************************************************");
 
-            bool[] res = ds.GetCompareOperations(x, y);
-            foreach (var op in res) 
-            {
-                Console.WriteLine(op);
-            }
+            double res = ds.LoadFromDataFile(path);
+            Console.WriteLine(res);
+
             Console.ReadKey();
         }
     }

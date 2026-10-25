@@ -9,11 +9,16 @@ namespace Tyuiu.KrukGV.Sprint5.Task4.V10.Test
         [TestMethod]
         public void ValidExpression()
         {
-            DataService ds = new DataService();
-            bool[] res = ds.GetCompareOperations(1065, 755);
-            bool[] ans = { true, false, false, false, false, false };
+            string path = @"C:\DataSprint5\InPutDataFileTask4V10.txt";
 
-            CollectionAssert.AreEqual(ans, res);
+            FileInfo fileInfo = new FileInfo(path);
+            bool fileExists = fileInfo.Exists;
+            bool wait = true;
+            Assert.AreEqual(wait, fileExists);
+
+            DataService ds = new DataService();
+            var y = ds.LoadFromDataFile(path);
+            Assert.AreEqual(69.637, y);
         }
     }
 }
