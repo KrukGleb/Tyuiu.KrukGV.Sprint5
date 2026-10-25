@@ -14,7 +14,7 @@ namespace Tyuiu.KrukGV.Sprint5.Task2.V25.Test
             ds.SaveToFileTextData(mtrx);
 
             string path = Path.GetTempPath();
-            path = Path.Combine(path, "OutPutFileTask2.txt");
+            path = Path.Combine(path, "OutPutFileTask2.csv");
 
             FileInfo fileInfo = new FileInfo(path);
             bool fileExists = fileInfo.Exists;

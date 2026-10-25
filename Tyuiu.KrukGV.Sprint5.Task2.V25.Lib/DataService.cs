@@ -8,7 +8,7 @@ namespace Tyuiu.KrukGV.Sprint5.Task2.V25.Lib
         public string SaveToFileTextData(int[,] matrix)
         {
             string tempDir = Path.GetTempPath();
-            string path = Path.Combine(tempDir, "OutPutFileTask2.txt");
+            string path = Path.Combine(tempDir, "OutPutFileTask2.csv");
 
             FileInfo fileInfo = new FileInfo(path);
             bool fileExists = fileInfo.Exists;
