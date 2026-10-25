@@ -1,19 +1,23 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint2;
+﻿using tyuiu.cources.programming.interfaces.Sprint5;
 
 namespace Tyuiu.KrukGV.Sprint5.Task5.V17.Lib
 {
-    public class DataService : ISprint2Task0V17
+    public class DataService : ISprint5Task5V17
     {
-        public bool[] GetCompareOperations(int x, int y)
+        public double LoadFromDataFile(string path)
         {
-            bool[] res = new bool[6];
-            res[0] = x - 310 == y;
-            res[1] = x - 310 != y;
-            res[2] = x < y;
-            res[3] = y > x;
-            res[4] = x <= y;
-            res[5] = y >= x;
-            return res;
+            string strX = File.ReadAllText(path);
+            string[] parts = strX.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            int sum = 0;
+            int temp;
+            foreach (string part in parts)
+            {
+                if (int.TryParse(part, out temp))
+                    sum += temp;
+              }
+            return sum;
+            
         }
     }
 }

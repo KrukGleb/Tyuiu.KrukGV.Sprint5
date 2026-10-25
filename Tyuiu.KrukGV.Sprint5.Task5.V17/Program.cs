@@ -14,32 +14,27 @@ namespace Tyuiu.KrukGV.Sprint5.Task5.V17
             Console.WriteLine("* Спринт #5                                                               *");
             Console.WriteLine("* Тема: Базовые навыки работы в С#                                        *");
             Console.WriteLine("* Задание #5                                                              *");
-            Console.WriteLine("* Вариант #17                                                              *");
+            Console.WriteLine("* Вариант #17                                                             *");
             Console.WriteLine("* Выполнил: Крук Глеб Владиславович | НТм25-1                             *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Написать программу из операций сравнений (==, !=, <, >, <=, >=,         *");
-            Console.WriteLine("* последовательность операций не должна нарушаться) и арифметических      *");
-            Console.WriteLine("* выражений, которая вернет логическую последовательность                 *");
+            Console.WriteLine("* Найти сумму всех простых целых чисел в файле.                           *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
 
-            var x = 1065;
-            var y = 755;
-            Console.WriteLine("x = " + x);
-            Console.WriteLine("y = " + y);
+            string path = @"C:\DataSprint5\InPutDataFileTask5V17.txt";
 
-            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("Данные находятся в файле: " + path);
+
+            Console.WriteLine("*************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
-            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("*************************************************************************");
 
-            bool[] res = ds.GetCompareOperations(x, y);
-            foreach (var op in res) 
-            {
-                Console.WriteLine(op);
-            }
+            double res = ds.LoadFromDataFile(path);
+            Console.WriteLine(res);
+
             Console.ReadKey();
         }
     }
