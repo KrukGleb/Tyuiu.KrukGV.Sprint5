@@ -23,7 +23,7 @@ namespace Tyuiu.KrukGV.Sprint5.Task1.V12.Lib
             for (int x = startValue; x <= stopValue; x++)
             {
                 y = (5 * x + 2.5) / (Math.Sin(x) - 2) + 2;
-                y = Math.Round(y, 3);
+                y = Math.Round(y, 2);
                 strY = Convert.ToString(y);
 
                 if (x != stopValue)
